@@ -8,3 +8,5 @@ class TestConstructorSwitchingTabs:
     def test_costractor_tab_fillings(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         driver.find_element(By.XPATH, Locators.constructor_button).click()
+        driver.find_element(By.XPATH, Locators.tab_filling).click()
+        assert driver.find_element(By.XPATH, Locators.tab_active_current).text in 'Начинки'

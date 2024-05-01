@@ -2,14 +2,13 @@ from conftest import driver
 from selenium.webdriver.common.by import By
 from constants import ConstantsUrl
 from locators import Locators
-from random_test_credentials import RandomTestCredentials
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from random_test_credentials import RandomTestCredentials
 
 
 class TestRegistration:
-    def test_registration_new_user_correct_credentials(self, driver):
+    def test_correct_credentials(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.register_link)))
@@ -43,7 +42,7 @@ class TestRegistration:
         assert element.text == "Оформить заказ"
 
 
-    def test_registration_incorrect_password_error(self, driver):
+    def test_incorrect_password_error(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.register_link)))

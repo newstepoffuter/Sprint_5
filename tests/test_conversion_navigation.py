@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestNavigation:
-    def test_conversion_navigation_in_personal_area(self, driver):
+    def test_in_personal_area(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
@@ -22,7 +22,7 @@ class TestNavigation:
         assert element.text == "Профиль"
 
 
-    def test_conversion_navigation_from_personal_area_to_constructor(self, driver):
+    def test_personal_area_to_constructor(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
@@ -38,7 +38,7 @@ class TestNavigation:
         assert element.text == "Соберите бургер"
 
 
-    def test_conversion_navigation_from_personal_area_to_logo_start_page(self, driver):
+    def test_personal_area_to_logo_start_page(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()

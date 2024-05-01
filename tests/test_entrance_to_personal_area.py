@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestEntrance:
-    def test_entrance_personal_area_using_button_personal_area_on_the_main_page(self, driver):
+    def test_using_button_personal_area_on_the_main_page(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
@@ -20,7 +20,7 @@ class TestEntrance:
         assert element.text == "Оформить заказ"
 
 
-    def test_entrance_personal_area_using_button_enter_to_account_on_the_main_page(self, driver):
+    def test_using_button_enter_to_account_on_the_main_page(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
@@ -32,7 +32,7 @@ class TestEntrance:
         assert element.text == "Оформить заказ"
 
 
-    def test_entrance_personal_area_using_button_in_the_registration_form(self,driver):
+    def test_using_button_in_the_registration_form(self,driver):
         driver.get(ConstantsUrl.start_page_url)
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.register_link)))
@@ -46,7 +46,7 @@ class TestEntrance:
         assert element.text == "Оформить заказ"
 
 
-    def test_entrance_personal_area_using_button_in_the_password_recovery_form(self,driver):
+    def test_using_button_in_the_password_recovery_form(self,driver):
         driver.get(ConstantsUrl.start_page_url)
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.password_recovery_link)))
