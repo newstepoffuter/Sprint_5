@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestEntrance:
-    def test_using_button_personal_area_on_the_main_page(self, driver):
+    def test_using_button_on_the_main_page(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()
@@ -20,7 +20,7 @@ class TestEntrance:
         assert element.text == "Оформить заказ"
 
 
-    def test_using_button_enter_to_account_on_the_main_page(self, driver):
+    def test_using_button_enter_to_account(self, driver):
         driver.get(ConstantsUrl.start_page_url)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, Locators.personal_area_button)))
         driver.find_element(By.XPATH, Locators.personal_area_button).click()

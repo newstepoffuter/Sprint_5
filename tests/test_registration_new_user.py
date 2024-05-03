@@ -2,9 +2,10 @@ from conftest import driver
 from selenium.webdriver.common.by import By
 from constants import ConstantsUrl
 from locators import Locators
+from random_test_credentials import RandomTestCredentials
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from random_test_credentials import RandomTestCredentials
+
 
 
 class TestRegistration:
